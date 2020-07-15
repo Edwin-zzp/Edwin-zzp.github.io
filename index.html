@@ -302,9 +302,7 @@
       
         
           
-            <p>#win10系统下vscode搭建C语言开发环境</p>
-<p>###1、检查系统情况</p>
-<p>键盘win键（就是键盘上按下会出现开始菜单那个键）+R。打开运行对话框，输入cmd：</p>
+            <h1 id="win10系统下vscode搭建C语言开发环境"><a href="#win10系统下vscode搭建C语言开发环境" class="headerlink" title="win10系统下vscode搭建C语言开发环境"></a>win10系统下vscode搭建C语言开发环境</h1><h3 id="1、检查系统情况"><a href="#1、检查系统情况" class="headerlink" title="1、检查系统情况"></a>1、检查系统情况</h3><p>键盘win键（就是键盘上按下会出现开始菜单那个键）+R。打开运行对话框，输入cmd：</p>
 <p><img src="https://verimake.com/uploads/images/202005/25/48/bqAu6ZHtrB.png" alt="file"></p>
 <p>打开一个黑底白字的命令行窗口，输入指令gcc –version或者g++ –version</p>
 <blockquote>
@@ -314,10 +312,10 @@
 <p>g++ –version  查看系统g++编译器版本 用来编译c++语言</p>
 </blockquote>
 <p>如果显示如下图说明系统没有安装编译器，无法编译C/C++语言编写的代码。<br><img src="https://verimake.com/uploads/images/202005/25/48/7I83RoPmRt.png" alt="file"><br><img src="https://verimake.com/uploads/images/202005/25/48/ch97GQf4fh.png" alt="file"></p>
-<p>###2、安装编译器<br>这里介绍安装mingw-w64，<br>下载地址：<a href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/" target="_blank" rel="noopener">https://sourceforge.net/projects/mingw-w64/files/mingw-w64/</a><br>里面有在线安装包，不建议下载这个安装，主要每个人网络不同，有的可以无错安装，有的就会出错，主要是网络问题。建议下载（当然其他的X86版本的都可以）：</p>
+<h3 id="2、安装编译器"><a href="#2、安装编译器" class="headerlink" title="2、安装编译器"></a>2、安装编译器</h3><p>这里介绍安装mingw-w64，<br>下载地址：<a href="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/" target="_blank" rel="noopener">https://sourceforge.net/projects/mingw-w64/files/mingw-w64/</a><br>里面有在线安装包，不建议下载这个安装，主要每个人网络不同，有的可以无错安装，有的就会出错，主要是网络问题。建议下载（当然其他的X86版本的都可以）：</p>
 <p><img src="https://verimake.com/uploads/images/202005/25/48/XES3PCQs1X.png" alt="file"></p>
 <p>下载后得到一个压缩包x86_64-8.1.0-release-win32-seh-rt_v6-rev0.7z，解压后得到mingw64文件夹，将该文件夹拷贝到一个没有中文路径的地方，比如C盘根目录。记录好该路径。例如C:\mingw64</p>
-<p>###3、添加编译器到系统变量<br>将解压缩的文件夹mingw64里的bin文件夹添加到系统变量中， 因为里面有gcc和g++编译器，让系统认识gcc或g++指令。</p>
+<h3 id="3、添加编译器到系统变量"><a href="#3、添加编译器到系统变量" class="headerlink" title="3、添加编译器到系统变量"></a>3、添加编译器到系统变量</h3><p>将解压缩的文件夹mingw64里的bin文件夹添加到系统变量中， 因为里面有gcc和g++编译器，让系统认识gcc或g++指令。</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/PmNVwEneSm.png" alt="file"></p>
 <p>a、点击此电脑鼠标右击，选择属性：</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/OLlJdZEBgf.png" alt="file"></p>
@@ -328,7 +326,7 @@
 <p>d、在系统变量里找到PATH，点击编辑，然后点击新建，添加刚刚编译器的文件的夹下bin目录的路径</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/p0rkoBmmij.png" alt="file"></p>
 <p>e、点击确定结束。</p>
-<p>###4、查看编译器是否添加完成<br>回到第一步的方法，打开cmd.exe，输入gcc –version，如果添加成功：<br><img src="https://verimake.com/uploads/images/202005/26/48/VkPsU8OSVc.png" alt="file"></p>
+<h3 id="4、查看编译器是否添加完成"><a href="#4、查看编译器是否添加完成" class="headerlink" title="4、查看编译器是否添加完成"></a>4、查看编译器是否添加完成</h3><p>回到第一步的方法，打开cmd.exe，输入gcc –version，如果添加成功：<br><img src="https://verimake.com/uploads/images/202005/26/48/VkPsU8OSVc.png" alt="file"></p>
 <p>###5、测试编译器<br>在平时自己工作的目录下新建一个文件夹，例如命名为cwork用来存放设计的c语言程序，在文件夹里新建一个文本文件，输入以下内容：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdio.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello world!\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>另存文件，文件名命名为hello.c（注意后缀名是.c）。<br>打开cmd，利用cd命令进入hello.c所在的目录下。例如我是放在桌面下cwork目录下的：</p>
@@ -341,12 +339,14 @@
 <p>得到了输出结果Hello world！</p>
 <p>那么我们可以用文本编辑器来写代码，</p>
 <p>:cry::cry::cry::cry::cry::cry::cry::cry::cry::cry::cry::cry::cry:</p>
-<p>这岂不是回到远古时代，这样写c代码太low了。所以可以换一个代码编辑器，VScode来了。（当然还有其他的编辑器Nodepad++，Sublime，Atom等等）。<br>###1、安装VScode<br>下载地址：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a>        随自己喜好，安装好VScode。<br>###2、安装插件<br>侧边栏选择如下：</p>
+<p>这岂不是回到远古时代，这样写c代码太low了。所以可以换一个代码编辑器，VScode来了。（当然还有其他的编辑器Nodepad++，Sublime，Atom等等）。</p>
+<h3 id="1、安装VScode"><a href="#1、安装VScode" class="headerlink" title="1、安装VScode"></a>1、安装VScode</h3><p>下载地址：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener">https://code.visualstudio.com/</a>        随自己喜好，安装好VScode。</p>
+<h3 id="2、安装插件"><a href="#2、安装插件" class="headerlink" title="2、安装插件"></a>2、安装插件</h3><p>侧边栏选择如下：</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/z0DS1aImNM.png" alt="file"></p>
 <p>搜素输入C，安装如下两个插件：</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/NpntHxKEgm.png" alt="file"></p>
 <p>安装好插件后关闭VScode。</p>
-<p>###3、测试VScode运行C代码。<br>用VScode打开刚刚的hello.c文件。</p>
+<h3 id="3、测试VScode运行C代码。"><a href="#3、测试VScode运行C代码。" class="headerlink" title="3、测试VScode运行C代码。"></a>3、测试VScode运行C代码。</h3><p>用VScode打开刚刚的hello.c文件。</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/uOhkSV0UQi.png" alt="file"></p>
 <p>这样关键字高亮，自动缩进，等等，当然更多功能也可以下载其他的插件，现在主要是验证VScode运行C代码。</p>
 <p>在空白出鼠标右击或者点击如图执行Run code</p>
@@ -360,7 +360,8 @@
 <p>保存退出。这样，再运行Run code 就会调用命令行窗口运行程序。</p>
 <p><img src="https://verimake.com/uploads/images/202005/26/48/3jqrqRTrFO.png" alt="file"></p>
 <p>完成。</p>
-<h5 id="这种方式调试单个C或者C-程序比较轻便，但是功能上还是欠缺的，例如调试，单步，断点，内存查看，等等都是不可以的-crying-cat-face-（但是如果想要再VScode中调试，其实也可以，就是非常非常复杂，真心不推荐）。如果需要调试功能强大的集成开发环境，推荐VS，DEV-C-等等。不在这贴说了。"><a href="#这种方式调试单个C或者C-程序比较轻便，但是功能上还是欠缺的，例如调试，单步，断点，内存查看，等等都是不可以的-crying-cat-face-（但是如果想要再VScode中调试，其实也可以，就是非常非常复杂，真心不推荐）。如果需要调试功能强大的集成开发环境，推荐VS，DEV-C-等等。不在这贴说了。" class="headerlink" title="这种方式调试单个C或者C++程序比较轻便，但是功能上还是欠缺的，例如调试，单步，断点，内存查看，等等都是不可以的:crying_cat_face: （但是如果想要再VScode中调试，其实也可以，就是非常非常复杂，真心不推荐）。如果需要调试功能强大的集成开发环境，推荐VS，DEV-C++等等。不在这贴说了。"></a>这种方式调试单个C或者C++程序比较轻便，但是功能上还是欠缺的，例如调试，单步，断点，内存查看，等等都是不可以的:crying_cat_face: （但是如果想要再VScode中调试，其实也可以，就是非常非常复杂，真心不推荐）。如果需要调试功能强大的集成开发环境，推荐VS，DEV-C++等等。不在这贴说了。</h5>
+<h5 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h5><p>这种方式调试单个C或者C++程序比较轻便，但是功能上还是欠缺的，例如调试，单步，断点，内存查看，等等都是不可以的:crying_cat_face: （但是如果想要再VScode中调试，其实也可以，就是非常非常复杂，真心不推荐）。如果需要调试功能强大的集成开发环境，推荐VS，DEV-C++等等。不在这贴说了。</p>
+
           
         
       
